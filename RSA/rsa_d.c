@@ -45,43 +45,35 @@ int main()
   }
 
   uint8_t encrypted_pixel_digits = ceil(16 / log10(2));
-
-  uint8_t buffer[BUFFER_SIZE];
-
   uint8_t pixel[encrypted_pixel_digits];
   uint8_t pixel_index = 0;
 
+  uint8_t buffer[BUFFER_SIZE];
   while (fread(buffer, sizeof(char), BUFFER_SIZE, encrypted_image) > 0) {
     for (uint32_t i = 0; i < BUFFER_SIZE; i++) {
       const uint8_t character = buffer[i];
 
       if (character == '\n' || character == ' ') { continue; }
 
-      if (character == '\0') {
+      if (character == ',' || character == '\0') {
         pixel[pixel_index + 1] = '\0';
         pixel_index = 0;
 
         uint8_t decrypted_pixel = binary_exponentiation(atoi(pixel), d, n);
-        fprintf(decrypted_image, "%hhu", decrypted_pixel);
 
+        if (character == '\0') {
+          fprintf(decrypted_image, "%hhu", decrypted_pixel);
+          memset(pixel, 0, encrypted_pixel_digits);
+          break;
+        }
+
+        fprintf(decrypted_image, "%hhu,", decrypted_pixel);
         memset(pixel, 0, encrypted_pixel_digits);
-
-        break;
-      }
-
-      if (character != ',') {
-        pixel[pixel_index] = character;
-        pixel_index++;
         continue;
       }
 
-      pixel[pixel_index + 1] = '\0';
-      pixel_index = 0;
-
-      uint8_t decrypted_pixel = binary_exponentiation(atoi(pixel), d, n);
-      fprintf(decrypted_image, "%hhu,", decrypted_pixel);
-
-      memset(pixel, 0, encrypted_pixel_digits);
+      pixel[pixel_index] = character;
+      pixel_index++;
     }
 
     memset(buffer, 0, BUFFER_SIZE);
