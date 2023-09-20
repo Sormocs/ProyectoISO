@@ -12,7 +12,7 @@ const uint16_t d = 28667;
 const uint8_t encrypted_image_path[256] = "encrypted_image.txt";
 const uint8_t decrypted_image_path[256] = "decrypted_image.txt";
 
-uint8_t binary_exponentiation(uint16_t base, uint16_t exp, uint16_t mod) {
+uint16_t binary_exponentiation(uint16_t base, uint16_t exp, uint16_t mod) {
   uint32_t result = 1;
 
   base = base % mod;
@@ -25,7 +25,7 @@ uint8_t binary_exponentiation(uint16_t base, uint16_t exp, uint16_t mod) {
     exp = exp >> 1;
   }
 
-  return (uint8_t)result;
+  return (uint16_t)result;
 }
 
 int main()
@@ -59,15 +59,15 @@ int main()
         pixel[pixel_index + 1] = '\0';
         pixel_index = 0;
 
-        uint8_t decrypted_pixel = binary_exponentiation(atoi(pixel), d, n);
+        uint16_t decrypted_pixel = binary_exponentiation(atoi(pixel), d, n);
 
         if (character == '\0') {
-          fprintf(decrypted_image, "%hhu", decrypted_pixel);
+          fprintf(decrypted_image, "%hu", decrypted_pixel);
           memset(pixel, 0, encrypted_pixel_digits);
           break;
         }
 
-        fprintf(decrypted_image, "%hhu,", decrypted_pixel);
+        fprintf(decrypted_image, "%hu,", decrypted_pixel);
         memset(pixel, 0, encrypted_pixel_digits);
         continue;
       }

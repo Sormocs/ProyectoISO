@@ -63,11 +63,13 @@ with open(key_output_path, "w") as file:
 
 
 with open(encrypted_output_path, "w") as file:
+    file.write(f"{pow(width, e, n)},{pow(height, e, n)},")
+
     for i in range(width):
         for j in range(height):
             r, g, b = pixels[i, j]
             gray_pixel = int(0.2989 * r + 0.5870 * g + 0.1140 * b)
-            encrypted_pixel = pow(int(gray_pixel), e, n)
+            encrypted_pixel = pow(gray_pixel, e, n)
             
             if(j == (height - 1) and i == (width - 1)):
                 file.write(f"{encrypted_pixel}")
