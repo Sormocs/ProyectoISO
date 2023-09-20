@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 20, 2023 2:32:53 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1695241973933</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 20, 2023 4:29:45 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1695248985148</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/rijegaro/Documents/Github/ProyectoISO/software/proyecto_iso_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../platform.sopcinfo</SopcDesignFile>
@@ -885,6 +885,54 @@
                 <addressRange>0x00010000 - 0x00013FFF</addressRange>
                 <addressSpan>16384</addressSpan>
                 <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_0</slaveDescriptor>
+                <addressRange>0x00020000 - 0x0002000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_1</slaveDescriptor>
+                <addressRange>0x00030000 - 0x0003000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_2</slaveDescriptor>
+                <addressRange>0x00040000 - 0x0004000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_3</slaveDescriptor>
+                <addressRange>0x00050000 - 0x0005000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_4</slaveDescriptor>
+                <addressRange>0x00060000 - 0x0006000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_5</slaveDescriptor>
+                <addressRange>0x00070000 - 0x0007000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>inputs</slaveDescriptor>
+                <addressRange>0x00080000 - 0x0008000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>timer_0</slaveDescriptor>
+                <addressRange>0x00090000 - 0x0009001F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>
