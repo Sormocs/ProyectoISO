@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
  * SOPC Builder design path: ../../platform.sopcinfo
  *
- * Generated: Wed Sep 20 16:29:46 CST 2023
+ * Generated: Wed Sep 20 17:18:53 CST 2023
  */
 
 /*
@@ -428,28 +428,28 @@
 
 
 /*
- * timer_0 configuration
+ * timer configuration
  *
  */
 
-#define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
-#define TIMER_0_ALWAYS_RUN 1
-#define TIMER_0_BASE 0x90000
-#define TIMER_0_COUNTER_SIZE 32
-#define TIMER_0_FIXED_PERIOD 1
-#define TIMER_0_FREQ 50000000
-#define TIMER_0_IRQ 0
-#define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_0_LOAD_VALUE 49999999
-#define TIMER_0_MULT 1.0
-#define TIMER_0_NAME "/dev/timer_0"
-#define TIMER_0_PERIOD 1
-#define TIMER_0_PERIOD_UNITS "s"
-#define TIMER_0_RESET_OUTPUT 0
-#define TIMER_0_SNAPSHOT 0
-#define TIMER_0_SPAN 32
-#define TIMER_0_TICKS_PER_SEC 1
-#define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_0_TYPE "altera_avalon_timer"
+#define ALT_MODULE_CLASS_timer altera_avalon_timer
+#define TIMER_ALWAYS_RUN 1
+#define TIMER_BASE 0x90000
+#define TIMER_COUNTER_SIZE 32
+#define TIMER_FIXED_PERIOD 1
+#define TIMER_FREQ 50000000
+#define TIMER_IRQ 0
+#define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_LOAD_VALUE 49999999
+#define TIMER_MULT 1.0
+#define TIMER_NAME "/dev/timer"
+#define TIMER_PERIOD 1
+#define TIMER_PERIOD_UNITS "s"
+#define TIMER_RESET_OUTPUT 0
+#define TIMER_SNAPSHOT 0
+#define TIMER_SPAN 32
+#define TIMER_TICKS_PER_SEC 1
+#define TIMER_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */
