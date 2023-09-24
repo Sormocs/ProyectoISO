@@ -104,7 +104,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -117,7 +117,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -143,20 +143,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
-         type = "boolean";
-      }
-   }
-   element timer
-   {
-      datum _sortIndex
-      {
-         value = "11";
-         type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -346,7 +333,7 @@
   <parameter name="dataAddrWidth" value="20" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ram.s1' start='0x10000' end='0x14000' type='altera_avalon_onchip_memory2.s1' /><slave name='display_0.s1' start='0x20000' end='0x20010' type='altera_avalon_pio.s1' /><slave name='display_1.s1' start='0x30000' end='0x30010' type='altera_avalon_pio.s1' /><slave name='display_2.s1' start='0x40000' end='0x40010' type='altera_avalon_pio.s1' /><slave name='display_3.s1' start='0x50000' end='0x50010' type='altera_avalon_pio.s1' /><slave name='display_4.s1' start='0x60000' end='0x60010' type='altera_avalon_pio.s1' /><slave name='display_5.s1' start='0x70000' end='0x70010' type='altera_avalon_pio.s1' /><slave name='inputs.s1' start='0x80000' end='0x80010' type='altera_avalon_pio.s1' /><slave name='timer.s1' start='0x90000' end='0x90020' type='altera_avalon_timer.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ram.s1' start='0x10000' end='0x18000' type='altera_avalon_onchip_memory2.s1' /><slave name='display_0.s1' start='0x20000' end='0x20010' type='altera_avalon_pio.s1' /><slave name='display_1.s1' start='0x30000' end='0x30010' type='altera_avalon_pio.s1' /><slave name='display_2.s1' start='0x40000' end='0x40010' type='altera_avalon_pio.s1' /><slave name='display_3.s1' start='0x50000' end='0x50010' type='altera_avalon_pio.s1' /><slave name='display_4.s1' start='0x60000' end='0x60010' type='altera_avalon_pio.s1' /><slave name='display_5.s1' start='0x70000' end='0x70010' type='altera_avalon_pio.s1' /><slave name='inputs.s1' start='0x80000' end='0x80010' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -384,15 +371,15 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
-  <parameter name="instAddrWidth" value="14" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='rom.s1' start='0x0' end='0x4000' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="15" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='rom.s1' start='0x0' end='0x8000' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="internalIrqMaskSystemInfo" value="0" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -510,7 +497,7 @@
    version="21.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="$${FILENAME}_ram" />
+  <parameter name="autoInitializationFileName" value="platform_ram" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -524,7 +511,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="16384" />
+  <parameter name="memorySize" value="32768" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -542,7 +529,7 @@
    version="21.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="$${FILENAME}_rom" />
+  <parameter name="autoInitializationFileName" value="platform_rom" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -556,7 +543,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="16384" />
+  <parameter name="memorySize" value="32768" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -567,18 +554,6 @@
   <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="false" />
- </module>
- <module name="timer" kind="altera_avalon_timer" version="21.1" enabled="1">
-  <parameter name="alwaysRun" value="true" />
-  <parameter name="counterSize" value="32" />
-  <parameter name="fixedPeriod" value="true" />
-  <parameter name="period" value="1" />
-  <parameter name="periodUnits" value="SEC" />
-  <parameter name="resetOutput" value="false" />
-  <parameter name="snapshot" value="false" />
-  <parameter name="systemFrequency" value="50000000" />
-  <parameter name="timeoutPulseOutput" value="false" />
-  <parameter name="watchdogPulse" value="2" />
  </module>
  <connection
    kind="avalon"
@@ -655,15 +630,6 @@
  <connection
    kind="avalon"
    version="21.1"
-   start="nios2_gen2_0.data_master"
-   end="timer.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00090000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="21.1"
    start="nios2_gen2_0.instruction_master"
    end="rom.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -678,16 +644,8 @@
  <connection kind="clock" version="21.1" start="clk_0.clk" end="display_3.clk" />
  <connection kind="clock" version="21.1" start="clk_0.clk" end="display_4.clk" />
  <connection kind="clock" version="21.1" start="clk_0.clk" end="display_5.clk" />
- <connection kind="clock" version="21.1" start="clk_0.clk" end="timer.clk" />
  <connection kind="clock" version="21.1" start="clk_0.clk" end="rom.clk1" />
  <connection kind="clock" version="21.1" start="clk_0.clk" end="ram.clk1" />
- <connection
-   kind="interrupt"
-   version="21.1"
-   start="nios2_gen2_0.irq"
-   end="timer.irq">
-  <parameter name="irqNumber" value="0" />
- </connection>
  <connection
    kind="reset"
    version="21.1"
@@ -728,7 +686,6 @@
    version="21.1"
    start="clk_0.clk_reset"
    end="display_5.reset" />
- <connection kind="reset" version="21.1" start="clk_0.clk_reset" end="timer.reset" />
  <connection kind="reset" version="21.1" start="clk_0.clk_reset" end="rom.reset1" />
  <connection kind="reset" version="21.1" start="clk_0.clk_reset" end="ram.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

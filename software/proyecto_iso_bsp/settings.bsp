@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 20, 2023 10:43:47 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1695271427035</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 24, 2023 3:16:30 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1695590190533</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/rijegaro/Documents/Github/ProyectoISO/software/proyecto_iso_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../platform.sopcinfo</SopcDesignFile>
@@ -876,14 +876,14 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>rom</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00003FFF</addressRange>
-                <addressSpan>16384</addressSpan>
+                <addressRange>0x00000000 - 0x00007FFF</addressRange>
+                <addressSpan>32768</addressSpan>
                 <attributes>memory, non-volatile</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ram</slaveDescriptor>
-                <addressRange>0x00010000 - 0x00013FFF</addressRange>
-                <addressSpan>16384</addressSpan>
+                <addressRange>0x00010000 - 0x00017FFF</addressRange>
+                <addressSpan>32768</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
@@ -927,12 +927,6 @@
                 <addressRange>0x00080000 - 0x0008000F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>timer</slaveDescriptor>
-                <addressRange>0x00090000 - 0x0009001F</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes>timer</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
  * SOPC Builder design path: ../../platform.sopcinfo
  *
- * Generated: Wed Sep 20 17:18:53 CST 2023
+ * Generated: Sun Sep 24 15:16:31 CST 2023
  */
 
 /*
@@ -87,7 +87,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0xe
+#define ALT_CPU_INST_ADDR_WIDTH 0xf
 #define ALT_CPU_NAME "nios2_gen2_0"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00000000
@@ -123,7 +123,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0xe
+#define NIOS2_INST_ADDR_WIDTH 0xf
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00000000
 
@@ -135,7 +135,6 @@
 
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
-#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -145,7 +144,6 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone V"
-#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
@@ -392,8 +390,8 @@
 #define RAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define RAM_SINGLE_CLOCK_OP 0
 #define RAM_SIZE_MULTIPLE 1
-#define RAM_SIZE_VALUE 16384
-#define RAM_SPAN 16384
+#define RAM_SIZE_VALUE 32768
+#define RAM_SPAN 32768
 #define RAM_TYPE "altera_avalon_onchip_memory2"
 #define RAM_WRITABLE 1
 
@@ -421,35 +419,9 @@
 #define ROM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define ROM_SINGLE_CLOCK_OP 0
 #define ROM_SIZE_MULTIPLE 1
-#define ROM_SIZE_VALUE 16384
-#define ROM_SPAN 16384
+#define ROM_SIZE_VALUE 32768
+#define ROM_SPAN 32768
 #define ROM_TYPE "altera_avalon_onchip_memory2"
 #define ROM_WRITABLE 0
-
-
-/*
- * timer configuration
- *
- */
-
-#define ALT_MODULE_CLASS_timer altera_avalon_timer
-#define TIMER_ALWAYS_RUN 1
-#define TIMER_BASE 0x90000
-#define TIMER_COUNTER_SIZE 32
-#define TIMER_FIXED_PERIOD 1
-#define TIMER_FREQ 50000000
-#define TIMER_IRQ 0
-#define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_LOAD_VALUE 49999999
-#define TIMER_MULT 1.0
-#define TIMER_NAME "/dev/timer"
-#define TIMER_PERIOD 1
-#define TIMER_PERIOD_UNITS "s"
-#define TIMER_RESET_OUTPUT 0
-#define TIMER_SNAPSHOT 0
-#define TIMER_SPAN 32
-#define TIMER_TICKS_PER_SEC 1
-#define TIMER_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */

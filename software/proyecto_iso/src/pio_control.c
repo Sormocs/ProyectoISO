@@ -16,10 +16,10 @@ void set_displays(uint32_t value) {
     value = value / DISPLAYS_BASE;
   }
 
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_5_BASE, displays[5]);
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_4_BASE, displays[4]);
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_3_BASE, displays[3]);
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_2_BASE, displays[2]);
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_1_BASE, displays[1]);
-  IOWR_ALTERA_AVALON_PIO_DATA(DISPLAY_0_BASE, displays[0]);
+  IOWR(DISPLAY_5_BASE, 0, displays[5]);
+  IOWR(DISPLAY_4_BASE, 0, displays[4]);
+  IOWR(DISPLAY_3_BASE, 0, displays[3]);
+  IOWR(DISPLAY_2_BASE, 0, displays[2]);
+  IOWR(DISPLAY_1_BASE, 0, displays[1]);
+  IOWR(DISPLAY_0_BASE, 0, displays[0]);
 }
