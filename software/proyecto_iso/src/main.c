@@ -73,10 +73,6 @@ int main() {
 
   uint16_t buffer[8] = { 33766, 36577, 8525, 11202, 6856,  6201,  14881, 19556 };
 
-  for (uint8_t i = 0; i < 8; i++) {
-    set_displays(buffer[i]);
-  }
-
   uint32_t pixel_index = 0;
 
   while (1) {
@@ -87,7 +83,7 @@ int main() {
       }
       else {
         set_private_key_n(&private_key);
-        set_displays(private_key.n);
+        set_displays(private_key.n, 16);
       }
     }
     else if (state == STATE_SETTING_D) {
@@ -97,7 +93,7 @@ int main() {
       }
       else {
         set_private_key_d(&private_key);
-        set_displays(private_key.d);
+        set_displays(private_key.d, 16);
       }
     }
     else if (state == STATE_DECRYPTING) {
@@ -105,7 +101,7 @@ int main() {
       uint16_t decrypted_pixel = decrypt_pixel(encrypted_pixel, &private_key);
 
       if (decrypted_pixel != PIXEL_NOT_DECRYPTED) {
-        set_displays(decrypted_pixel);
+        set_displays(decrypted_pixel, 10);
         pixel_index = (pixel_index + 1) % 8;
         usleep(1000 * 1000 * 0.25);
       }
