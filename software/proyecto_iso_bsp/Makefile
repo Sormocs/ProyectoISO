@@ -208,6 +208,10 @@ GENERATED_C_LIB_SRCS += alt_sys_init.c
 # used to build each file.
 #-------------------------------------------------------------------------------
 
+# altera_avalon_pio_driver sources root 
+altera_avalon_pio_driver_SRCS_ROOT := drivers
+
+# altera_avalon_pio_driver sources 
 # altera_nios2_gen2_hal_driver sources root 
 altera_nios2_gen2_hal_driver_SRCS_ROOT := HAL
 

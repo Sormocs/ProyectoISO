@@ -90,7 +90,9 @@ ACDS_VERSION := 21.1
 ELF := proyecto_iso.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := src/main.c
+C_SRCS += src/main.c
+C_SRCS += src/pio_control.c
+C_SRCS += src/rsa.c
 CXX_SRCS :=
 ASM_SRCS :=
 

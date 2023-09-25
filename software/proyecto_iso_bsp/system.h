@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
  * SOPC Builder design path: ../../platform.sopcinfo
  *
- * Generated: Wed Sep 20 14:32:54 CST 2023
+ * Generated: Sun Sep 24 16:58:06 CST 2023
  */
 
 /*
@@ -68,7 +68,7 @@
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x11
+#define ALT_CPU_DATA_ADDR_WIDTH 0x14
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
@@ -87,7 +87,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0xe
+#define ALT_CPU_INST_ADDR_WIDTH 0xd
 #define ALT_CPU_NAME "nios2_gen2_0"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00000000
@@ -105,7 +105,7 @@
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x11
+#define NIOS2_DATA_ADDR_WIDTH 0x14
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
@@ -123,7 +123,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0xe
+#define NIOS2_INST_ADDR_WIDTH 0xd
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00000000
 
@@ -134,6 +134,7 @@
  */
 
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
+#define __ALTERA_AVALON_PIO
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -167,6 +168,168 @@
 
 
 /*
+ * display_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_0 altera_avalon_pio
+#define DISPLAY_0_BASE 0x20000
+#define DISPLAY_0_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_0_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_0_CAPTURE 0
+#define DISPLAY_0_DATA_WIDTH 7
+#define DISPLAY_0_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_0_DRIVEN_SIM_VALUE 0
+#define DISPLAY_0_EDGE_TYPE "NONE"
+#define DISPLAY_0_FREQ 50000000
+#define DISPLAY_0_HAS_IN 0
+#define DISPLAY_0_HAS_OUT 1
+#define DISPLAY_0_HAS_TRI 0
+#define DISPLAY_0_IRQ -1
+#define DISPLAY_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_0_IRQ_TYPE "NONE"
+#define DISPLAY_0_NAME "/dev/display_0"
+#define DISPLAY_0_RESET_VALUE 0
+#define DISPLAY_0_SPAN 16
+#define DISPLAY_0_TYPE "altera_avalon_pio"
+
+
+/*
+ * display_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_1 altera_avalon_pio
+#define DISPLAY_1_BASE 0x30000
+#define DISPLAY_1_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_1_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_1_CAPTURE 0
+#define DISPLAY_1_DATA_WIDTH 7
+#define DISPLAY_1_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_1_DRIVEN_SIM_VALUE 0
+#define DISPLAY_1_EDGE_TYPE "NONE"
+#define DISPLAY_1_FREQ 50000000
+#define DISPLAY_1_HAS_IN 0
+#define DISPLAY_1_HAS_OUT 1
+#define DISPLAY_1_HAS_TRI 0
+#define DISPLAY_1_IRQ -1
+#define DISPLAY_1_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_1_IRQ_TYPE "NONE"
+#define DISPLAY_1_NAME "/dev/display_1"
+#define DISPLAY_1_RESET_VALUE 0
+#define DISPLAY_1_SPAN 16
+#define DISPLAY_1_TYPE "altera_avalon_pio"
+
+
+/*
+ * display_2 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_2 altera_avalon_pio
+#define DISPLAY_2_BASE 0x40000
+#define DISPLAY_2_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_2_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_2_CAPTURE 0
+#define DISPLAY_2_DATA_WIDTH 7
+#define DISPLAY_2_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_2_DRIVEN_SIM_VALUE 0
+#define DISPLAY_2_EDGE_TYPE "NONE"
+#define DISPLAY_2_FREQ 50000000
+#define DISPLAY_2_HAS_IN 0
+#define DISPLAY_2_HAS_OUT 1
+#define DISPLAY_2_HAS_TRI 0
+#define DISPLAY_2_IRQ -1
+#define DISPLAY_2_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_2_IRQ_TYPE "NONE"
+#define DISPLAY_2_NAME "/dev/display_2"
+#define DISPLAY_2_RESET_VALUE 0
+#define DISPLAY_2_SPAN 16
+#define DISPLAY_2_TYPE "altera_avalon_pio"
+
+
+/*
+ * display_3 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_3 altera_avalon_pio
+#define DISPLAY_3_BASE 0x50000
+#define DISPLAY_3_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_3_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_3_CAPTURE 0
+#define DISPLAY_3_DATA_WIDTH 7
+#define DISPLAY_3_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_3_DRIVEN_SIM_VALUE 0
+#define DISPLAY_3_EDGE_TYPE "NONE"
+#define DISPLAY_3_FREQ 50000000
+#define DISPLAY_3_HAS_IN 0
+#define DISPLAY_3_HAS_OUT 1
+#define DISPLAY_3_HAS_TRI 0
+#define DISPLAY_3_IRQ -1
+#define DISPLAY_3_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_3_IRQ_TYPE "NONE"
+#define DISPLAY_3_NAME "/dev/display_3"
+#define DISPLAY_3_RESET_VALUE 0
+#define DISPLAY_3_SPAN 16
+#define DISPLAY_3_TYPE "altera_avalon_pio"
+
+
+/*
+ * display_4 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_4 altera_avalon_pio
+#define DISPLAY_4_BASE 0x60000
+#define DISPLAY_4_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_4_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_4_CAPTURE 0
+#define DISPLAY_4_DATA_WIDTH 7
+#define DISPLAY_4_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_4_DRIVEN_SIM_VALUE 0
+#define DISPLAY_4_EDGE_TYPE "NONE"
+#define DISPLAY_4_FREQ 50000000
+#define DISPLAY_4_HAS_IN 0
+#define DISPLAY_4_HAS_OUT 1
+#define DISPLAY_4_HAS_TRI 0
+#define DISPLAY_4_IRQ -1
+#define DISPLAY_4_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_4_IRQ_TYPE "NONE"
+#define DISPLAY_4_NAME "/dev/display_4"
+#define DISPLAY_4_RESET_VALUE 0
+#define DISPLAY_4_SPAN 16
+#define DISPLAY_4_TYPE "altera_avalon_pio"
+
+
+/*
+ * display_5 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_display_5 altera_avalon_pio
+#define DISPLAY_5_BASE 0x70000
+#define DISPLAY_5_BIT_CLEARING_EDGE_REGISTER 0
+#define DISPLAY_5_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DISPLAY_5_CAPTURE 0
+#define DISPLAY_5_DATA_WIDTH 7
+#define DISPLAY_5_DO_TEST_BENCH_WIRING 0
+#define DISPLAY_5_DRIVEN_SIM_VALUE 0
+#define DISPLAY_5_EDGE_TYPE "NONE"
+#define DISPLAY_5_FREQ 50000000
+#define DISPLAY_5_HAS_IN 0
+#define DISPLAY_5_HAS_OUT 1
+#define DISPLAY_5_HAS_TRI 0
+#define DISPLAY_5_IRQ -1
+#define DISPLAY_5_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DISPLAY_5_IRQ_TYPE "NONE"
+#define DISPLAY_5_NAME "/dev/display_5"
+#define DISPLAY_5_RESET_VALUE 0
+#define DISPLAY_5_SPAN 16
+#define DISPLAY_5_TYPE "altera_avalon_pio"
+
+
+/*
  * hal configuration
  *
  */
@@ -175,6 +338,33 @@
 #define ALT_MAX_FD 32
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
+
+
+/*
+ * inputs configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_inputs altera_avalon_pio
+#define INPUTS_BASE 0x80000
+#define INPUTS_BIT_CLEARING_EDGE_REGISTER 0
+#define INPUTS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define INPUTS_CAPTURE 0
+#define INPUTS_DATA_WIDTH 5
+#define INPUTS_DO_TEST_BENCH_WIRING 0
+#define INPUTS_DRIVEN_SIM_VALUE 0
+#define INPUTS_EDGE_TYPE "NONE"
+#define INPUTS_FREQ 50000000
+#define INPUTS_HAS_IN 1
+#define INPUTS_HAS_OUT 0
+#define INPUTS_HAS_TRI 0
+#define INPUTS_IRQ -1
+#define INPUTS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define INPUTS_IRQ_TYPE "NONE"
+#define INPUTS_NAME "/dev/inputs"
+#define INPUTS_RESET_VALUE 0
+#define INPUTS_SPAN 16
+#define INPUTS_TYPE "altera_avalon_pio"
 
 
 /*
@@ -200,8 +390,8 @@
 #define RAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define RAM_SINGLE_CLOCK_OP 0
 #define RAM_SIZE_MULTIPLE 1
-#define RAM_SIZE_VALUE 16384
-#define RAM_SPAN 16384
+#define RAM_SIZE_VALUE 4096
+#define RAM_SPAN 4096
 #define RAM_TYPE "altera_avalon_onchip_memory2"
 #define RAM_WRITABLE 1
 
@@ -229,8 +419,8 @@
 #define ROM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define ROM_SINGLE_CLOCK_OP 0
 #define ROM_SIZE_MULTIPLE 1
-#define ROM_SIZE_VALUE 16384
-#define ROM_SPAN 16384
+#define ROM_SIZE_VALUE 8192
+#define ROM_SPAN 8192
 #define ROM_TYPE "altera_avalon_onchip_memory2"
 #define ROM_WRITABLE 0
 
