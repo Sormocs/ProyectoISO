@@ -51,14 +51,16 @@ void set_private_key_d(private_key_t* private_key) {
 }
 
 uint16_t decrypt_pixel(uint16_t encrypted_pixel, private_key_t* private_key) {
-  uint16_t decrypted_pixel = PIXEL_NOT_DECRYPTED;
-
-  if (/* IORD(INPUTS_BASE, 0) & MODE_MSK || */ IORD(INPUTS_BASE, 0) & BUTTON_0_MSK) {
-    while (IORD(INPUTS_BASE, 0) & BUTTON_0_MSK);
-    decrypted_pixel = binary_exponentiation(encrypted_pixel, private_key->d, private_key->n);
+  if (IORD(INPUTS_BASE, 0) & MODE_MSK) {
+    return binary_exponentiation(encrypted_pixel, private_key->d, private_key->n);
   }
 
-  return decrypted_pixel;
+  if (IORD(INPUTS_BASE, 0) & BUTTON_0_MSK) {
+    while (IORD(INPUTS_BASE, 0) & BUTTON_0_MSK);
+    return binary_exponentiation(encrypted_pixel, private_key->d, private_key->n);
+  }
+
+  return PIXEL_NOT_DECRYPTED;
 }
 
 int main() {
@@ -105,6 +107,7 @@ int main() {
       if (decrypted_pixel != PIXEL_NOT_DECRYPTED) {
         set_displays(decrypted_pixel);
         pixel_index = (pixel_index + 1) % 8;
+        usleep(1000 * 1000 * 0.25);
       }
     }
   }

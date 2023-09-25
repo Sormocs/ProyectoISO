@@ -42,7 +42,7 @@ module main(
     .debounced_button(debounced_inputs[3])
   );
 
-  assign debounced_inputs[4] = !inputs[4];
+  assign debounced_inputs[4] = inputs[4];
 
   platform cpu(
     .clk_clk(clk),
