@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 24, 2023 3:16:30 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1695590190533</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 24, 2023 6:16:20 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1695600980076</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/rijegaro/Documents/Github/ProyectoISO/software/proyecto_iso_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../platform.sopcinfo</SopcDesignFile>
@@ -876,14 +876,14 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>rom</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00007FFF</addressRange>
-                <addressSpan>32768</addressSpan>
+                <addressRange>0x00000000 - 0x00001FFF</addressRange>
+                <addressSpan>8192</addressSpan>
                 <attributes>memory, non-volatile</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ram</slaveDescriptor>
-                <addressRange>0x00010000 - 0x00017FFF</addressRange>
-                <addressSpan>32768</addressSpan>
+                <addressRange>0x00010000 - 0x00010FFF</addressRange>
+                <addressSpan>4096</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>

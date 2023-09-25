@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdint.h>
+#include <unistd.h>
 
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
@@ -32,18 +33,6 @@ void set_private_key_n(private_key_t* private_key) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_3_MSK);
     private_key->n += 0xff;
   }
-  // if (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_1_MSK) {
-  //   while (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_1_MSK);
-  //   private_key->n += 1;
-  // }
-  // else if (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_2_MSK) {
-  //   while (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_2_MSK);
-  //   private_key->n += 0xf;
-  // }
-  // else if (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_3_MSK) {
-  //   while (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_3_MSK);
-  //   private_key->n += 0xff;
-  // }
 }
 
 void set_private_key_d(private_key_t* private_key) {
@@ -61,38 +50,30 @@ void set_private_key_d(private_key_t* private_key) {
   }
 }
 
-// uint16_t decrypt_pixel(private_key_t* private_key, uint16_t* buffer, uint32_t pixel_index) {
-//   uint16_t decrypted_pixel = PIXEL_NOT_DECRYPTED;
+uint16_t decrypt_pixel(uint16_t encrypted_pixel, private_key_t* private_key) {
+  uint16_t decrypted_pixel = PIXEL_NOT_DECRYPTED;
 
-//   if (
-//     // IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & MODE_MSK ||
-//     IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_0_MSK
-//     ) {
-//     while (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_0_MSK);
+  if (/* IORD(INPUTS_BASE, 0) & MODE_MSK || */ IORD(INPUTS_BASE, 0) & BUTTON_0_MSK) {
+    while (IORD(INPUTS_BASE, 0) & BUTTON_0_MSK);
+    decrypted_pixel = binary_exponentiation(encrypted_pixel, private_key->d, private_key->n);
+  }
 
-//     decrypted_pixel = binary_exponentiation(buffer[pixel_index], private_key->d, private_key->n);
-//   }
-
-//   return decrypted_pixel;
-// }
+  return decrypted_pixel;
+}
 
 int main() {
   uint8_t state = STATE_SETTING_N;
 
-  private_key_t* private_key = (private_key_t*)malloc(sizeof(private_key_t));
-  private_key->n = 43423; //A99F
-  private_key->d = 28667; //6FFB
+  private_key_t private_key = {
+     .n = 43423, // A99F
+     .d = 28667  // 6FFB
+  };
 
-  // uint16_t buffer[16] = {
-  //   33766, 36577, 8525, 8525,
-  //   8525,  8525,  8525, 8525,
-  //   8525,  8525,  6856, 8525,
-  //   8525,  8525,  8525, 8525
-  // };
-  // uint16_t* buffer = (uint16_t*)malloc(16 * sizeof(uint16_t));
-  // for (uint8_t i = 0; i < 16; i++) {
-  //   buffer[i] = i + 1;
-  // }
+  uint16_t buffer[8] = { 33766, 36577, 8525, 11202, 6856,  6201,  14881, 19556 };
+
+  for (uint8_t i = 0; i < 8; i++) {
+    set_displays(buffer[i]);
+  }
 
   uint32_t pixel_index = 0;
 
@@ -103,8 +84,8 @@ int main() {
         state = STATE_SETTING_D;
       }
       else {
-        set_private_key_n(private_key);
-        set_displays(private_key->n);
+        set_private_key_n(&private_key);
+        set_displays(private_key.n);
       }
     }
     else if (state == STATE_SETTING_D) {
@@ -113,21 +94,18 @@ int main() {
         state = STATE_DECRYPTING;
       }
       else {
-        set_private_key_d(private_key);
-        set_displays(private_key->d);
+        set_private_key_d(&private_key);
+        set_displays(private_key.d);
       }
     }
     else if (state == STATE_DECRYPTING) {
-      // if (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_0_MSK) {
-      //   while (IORD_ALTERA_AVALON_PIO_DATA(INPUTS_BASE) & BUTTON_0_MSK);
-      //   set_displays(buffer[pixel_index]);
-      //   pixel_index = (pixel_index + 1) % 16;
-      // }
-      // uint16_t decrypted_pixel = decrypt_pixel(private_key, buffer, pixel_index);
-      // if (decrypted_pixel != PIXEL_NOT_DECRYPTED) {
-      //   pixel_index = (pixel_index + 1) % 16;
-      //   set_displays(decrypted_pixel);
-      // }
+      uint16_t encrypted_pixel = buffer[pixel_index];
+      uint16_t decrypted_pixel = decrypt_pixel(encrypted_pixel, &private_key);
+
+      if (decrypted_pixel != PIXEL_NOT_DECRYPTED) {
+        set_displays(decrypted_pixel);
+        pixel_index = (pixel_index + 1) % 8;
+      }
     }
   }
 

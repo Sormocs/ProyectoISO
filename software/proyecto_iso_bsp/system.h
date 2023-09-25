@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
  * SOPC Builder design path: ../../platform.sopcinfo
  *
- * Generated: Sun Sep 24 15:16:31 CST 2023
+ * Generated: Sun Sep 24 16:58:06 CST 2023
  */
 
 /*
@@ -87,7 +87,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0xf
+#define ALT_CPU_INST_ADDR_WIDTH 0xd
 #define ALT_CPU_NAME "nios2_gen2_0"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00000000
@@ -123,7 +123,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0xf
+#define NIOS2_INST_ADDR_WIDTH 0xd
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00000000
 
@@ -390,8 +390,8 @@
 #define RAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define RAM_SINGLE_CLOCK_OP 0
 #define RAM_SIZE_MULTIPLE 1
-#define RAM_SIZE_VALUE 32768
-#define RAM_SPAN 32768
+#define RAM_SIZE_VALUE 4096
+#define RAM_SPAN 4096
 #define RAM_TYPE "altera_avalon_onchip_memory2"
 #define RAM_WRITABLE 1
 
@@ -419,8 +419,8 @@
 #define ROM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define ROM_SINGLE_CLOCK_OP 0
 #define ROM_SIZE_MULTIPLE 1
-#define ROM_SIZE_VALUE 32768
-#define ROM_SPAN 32768
+#define ROM_SIZE_VALUE 8192
+#define ROM_SPAN 8192
 #define ROM_TYPE "altera_avalon_onchip_memory2"
 #define ROM_WRITABLE 0
 
