@@ -3,17 +3,15 @@
 
 #include "pio_control.h"
 
-#define DISPLAYS_BASE 16
-
 /**
  * Sets the value of the PIOs used by the displays.
 */
-void set_displays(uint32_t value) {
+void set_displays(uint32_t value, uint8_t base) {
   uint8_t displays[6] = { 0 };
 
   for (uint32_t i = 0; i < 6; i++) {
-    displays[i] = value % DISPLAYS_BASE;
-    value = value / DISPLAYS_BASE;
+    displays[i] = value % base;
+    value = value / base;
   }
 
   IOWR(DISPLAY_5_BASE, 0, displays[5]);
