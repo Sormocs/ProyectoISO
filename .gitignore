@@ -6,9 +6,8 @@
 /incremental_db
 /platform
 /simulation
-
+/.metadata
 /software/proyecto_iso/obj
-/software/proyecto_iso/mem_init
 /software/proyecto_iso/proyecto_iso.elf
 /software/proyecto_iso/proyecto_iso.map
 /software/proyecto_iso/proyecto_iso.objdump
