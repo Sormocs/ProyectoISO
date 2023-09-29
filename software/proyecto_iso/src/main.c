@@ -64,7 +64,47 @@ uint16_t decrypt_pixel(uint16_t encrypted_pixel, private_key_t* private_key) {
   return PIXEL_NOT_DECRYPTED;
 }
 
+void checkMem(){
+
+	volatile unsigned int *ptr = (volatile unsigned int*)SDRAM_0_BASE;
+
+	if(ptr[0] != 0){
+		IOWR(LEDS_BASE,1,0xb0000000001);
+	}
+	if(ptr[1] != 0){
+		IOWR(LEDS_BASE,1,0xb0000000011);
+	}
+	if(ptr[2] != 0){
+		IOWR(LEDS_BASE,1,0xb0000000111);
+	}
+	if(ptr[3] != 0){
+		IOWR(LEDS_BASE,1,0xb0000001111);
+	}
+	if(ptr[4] != 0){
+		IOWR(LEDS_BASE,1,0xb0000011111);
+	}
+	if(ptr[5] != 0){
+		IOWR(LEDS_BASE,1,0xb0001111111);
+	}
+	if(ptr[6] != 0){
+		IOWR(LEDS_BASE,1,0xb0011111111);
+	}
+	if(ptr[7] != 0){
+		IOWR(LEDS_BASE,1,0xb0111111111);
+	}
+	if(ptr[8] != 0){
+		IOWR(LEDS_BASE,1,0xb1111111111);
+	}
+	if(ptr[9] != 0){
+		IOWR(LEDS_BASE,1,0xb1000100001);
+	}
+
+}
+
 int main() {
+
+  checkMem();
+
   uint8_t state = STATE_SETTING_N;
 
   private_key_t private_key = {
