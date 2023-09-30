@@ -12,10 +12,11 @@ static void timer_isr(void *context)
 {
 	(void) context;
 
-	if (IORD(LED_BASE,0) == 0){
-		IOWR(LED_BASE,1,1);
+	unsigned led = IORD(LED_BASE,0);
+	if (led == 0){
+		IOWR(LED_BASE,1,0b0);
 	} else {
-		IOWR(LED_BASE,1,0);
+		IOWR(LED_BASE,1,0b1);
 	}
 
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE,0);
