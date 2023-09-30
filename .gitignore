@@ -2,13 +2,12 @@
 
 /.qsys_edit
 /db
-/output_files
 /incremental_db
+/output_files
 /platform
 /simulation
 
 /software/proyecto_iso/obj
-/software/proyecto_iso/mem_init
 /software/proyecto_iso/proyecto_iso.elf
 /software/proyecto_iso/proyecto_iso.map
 /software/proyecto_iso/proyecto_iso.objdump
@@ -23,3 +22,5 @@ RSA/rsa_d
 
 serv_req_info.txt
 software/.metadata/
+
+proyecto_iso.qws
