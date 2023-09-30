@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>28/09/2023 02:22:10 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1695889330105</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>./</BspGeneratedLocation>
-        <BspSettingsFile>./proyecto_iso_bsp/settings.bsp</BspSettingsFile>
-        <SopcDesignFile>../../platform.sopcinfo</SopcDesignFile>
+        <BspGeneratedTimeStamp>Sep 30, 2023 3:55:45 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1696110945731</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>D:\TEC\Semestre_II_2023\Operativos\Proyectos\P1\ProyectoISO\software\proyecto_iso_bsp</BspGeneratedLocation>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <SopcDesignFile>..\..\platform.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -882,49 +882,49 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ram</slaveDescriptor>
-                <addressRange>0x00010000 - 0x00010FFF</addressRange>
+                <addressRange>0x00002000 - 0x00002FFF</addressRange>
                 <addressSpan>4096</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>display_0</slaveDescriptor>
-                <addressRange>0x00020000 - 0x0002000F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>display_1</slaveDescriptor>
-                <addressRange>0x00030000 - 0x0003000F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>display_2</slaveDescriptor>
-                <addressRange>0x00040000 - 0x0004000F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>display_3</slaveDescriptor>
-                <addressRange>0x00050000 - 0x0005000F</addressRange>
+                <slaveDescriptor>display_5</slaveDescriptor>
+                <addressRange>0x00003000 - 0x0000300F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>display_4</slaveDescriptor>
-                <addressRange>0x00060000 - 0x0006000F</addressRange>
+                <addressRange>0x00003010 - 0x0000301F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>display_5</slaveDescriptor>
-                <addressRange>0x00070000 - 0x0007000F</addressRange>
+                <slaveDescriptor>display_3</slaveDescriptor>
+                <addressRange>0x00003020 - 0x0000302F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_2</slaveDescriptor>
+                <addressRange>0x00003030 - 0x0000303F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_1</slaveDescriptor>
+                <addressRange>0x00003040 - 0x0000304F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>display_0</slaveDescriptor>
+                <addressRange>0x00003050 - 0x0000305F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>inputs</slaveDescriptor>
-                <addressRange>0x00080000 - 0x0008000F</addressRange>
+                <addressRange>0x00003060 - 0x0000306F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
