@@ -7,7 +7,8 @@ module main(
 	output logic[6:0]	display_3,
 	output logic[6:0]	display_2,
 	output logic[6:0]	display_1,
-	output logic[6:0]	display_0
+	output logic[6:0]	display_0,
+	output logic led_external_connection_export
 );
   logic[4:0] debounced_inputs;
 
@@ -53,7 +54,8 @@ module main(
     .display_3_external_connection_export(display_3_driver_input),
     .display_2_external_connection_export(display_2_driver_input),
     .display_1_external_connection_export(display_1_driver_input),
-    .display_0_external_connection_export(display_0_driver_input)
+    .display_0_external_connection_export(display_0_driver_input),
+	 .led_external_connection_export(led_external_connection_export)
   );
 
   display_driver display_5_driver(

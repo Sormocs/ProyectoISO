@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
- * SOPC Builder design path: ../../platform.sopcinfo
+ * SOPC Builder design path: D:/TEC/Semestre_II_2023/Operativos/Proyectos/P1/ProyectoISO/platform.sopcinfo
  *
- * Generated: Sat Sep 30 15:28:06 CST 2023
+ * Generated: Sat Sep 30 16:51:33 CST 2023
  */
 
 /*
@@ -135,6 +135,7 @@
 
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
+#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -144,6 +145,7 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone V"
+#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
@@ -173,7 +175,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_0 altera_avalon_pio
-#define DISPLAY_0_BASE 0x3050
+#define DISPLAY_0_BASE 0x3080
 #define DISPLAY_0_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_0_CAPTURE 0
@@ -200,7 +202,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_1 altera_avalon_pio
-#define DISPLAY_1_BASE 0x3040
+#define DISPLAY_1_BASE 0x3070
 #define DISPLAY_1_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_1_CAPTURE 0
@@ -227,7 +229,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_2 altera_avalon_pio
-#define DISPLAY_2_BASE 0x3030
+#define DISPLAY_2_BASE 0x3060
 #define DISPLAY_2_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_2_CAPTURE 0
@@ -254,7 +256,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_3 altera_avalon_pio
-#define DISPLAY_3_BASE 0x3020
+#define DISPLAY_3_BASE 0x3050
 #define DISPLAY_3_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_3_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_3_CAPTURE 0
@@ -281,7 +283,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_4 altera_avalon_pio
-#define DISPLAY_4_BASE 0x3010
+#define DISPLAY_4_BASE 0x3040
 #define DISPLAY_4_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_4_CAPTURE 0
@@ -308,7 +310,7 @@
  */
 
 #define ALT_MODULE_CLASS_display_5 altera_avalon_pio
-#define DISPLAY_5_BASE 0x3000
+#define DISPLAY_5_BASE 0x3030
 #define DISPLAY_5_BIT_CLEARING_EDGE_REGISTER 0
 #define DISPLAY_5_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DISPLAY_5_CAPTURE 0
@@ -335,7 +337,7 @@
  */
 
 #define ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API
-#define ALT_MAX_FD 32
+#define ALT_MAX_FD 4
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
 
@@ -346,7 +348,7 @@
  */
 
 #define ALT_MODULE_CLASS_inputs altera_avalon_pio
-#define INPUTS_BASE 0x3060
+#define INPUTS_BASE 0x3090
 #define INPUTS_BIT_CLEARING_EDGE_REGISTER 0
 #define INPUTS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define INPUTS_CAPTURE 0
@@ -365,6 +367,33 @@
 #define INPUTS_RESET_VALUE 0
 #define INPUTS_SPAN 16
 #define INPUTS_TYPE "altera_avalon_pio"
+
+
+/*
+ * led configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_led altera_avalon_pio
+#define LED_BASE 0x3020
+#define LED_BIT_CLEARING_EDGE_REGISTER 0
+#define LED_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define LED_CAPTURE 0
+#define LED_DATA_WIDTH 1
+#define LED_DO_TEST_BENCH_WIRING 0
+#define LED_DRIVEN_SIM_VALUE 0
+#define LED_EDGE_TYPE "NONE"
+#define LED_FREQ 50000000
+#define LED_HAS_IN 0
+#define LED_HAS_OUT 1
+#define LED_HAS_TRI 0
+#define LED_IRQ -1
+#define LED_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define LED_IRQ_TYPE "NONE"
+#define LED_NAME "/dev/led"
+#define LED_RESET_VALUE 0
+#define LED_SPAN 16
+#define LED_TYPE "altera_avalon_pio"
 
 
 /*
@@ -423,5 +452,31 @@
 #define ROM_SPAN 8192
 #define ROM_TYPE "altera_avalon_onchip_memory2"
 #define ROM_WRITABLE 0
+
+
+/*
+ * timer_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
+#define TIMER_0_ALWAYS_RUN 0
+#define TIMER_0_BASE 0x3000
+#define TIMER_0_COUNTER_SIZE 32
+#define TIMER_0_FIXED_PERIOD 0
+#define TIMER_0_FREQ 50000000
+#define TIMER_0_IRQ 0
+#define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_0_LOAD_VALUE 49999999
+#define TIMER_0_MULT 1.0
+#define TIMER_0_NAME "/dev/timer_0"
+#define TIMER_0_PERIOD 1
+#define TIMER_0_PERIOD_UNITS "s"
+#define TIMER_0_RESET_OUTPUT 0
+#define TIMER_0_SNAPSHOT 1
+#define TIMER_0_SPAN 32
+#define TIMER_0_TICKS_PER_SEC 1
+#define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_0_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */
