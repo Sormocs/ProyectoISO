@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 30, 2023 6:12:35 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1696119156018</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 30, 2023 8:25:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1696127127425</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\TEC\Semestre_II_2023\Operativos\Proyectos\P1\ProyectoISO\software\proyecto_iso_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\platform.sopcinfo</SopcDesignFile>

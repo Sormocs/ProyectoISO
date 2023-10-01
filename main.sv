@@ -17,7 +17,23 @@ module main(
 	output		sdram_wire_we_n,
 	input		clk,
 	input		reset,
-	output		clocks_sdram_clk_clk
+	output		clocks_sdram_clk_clk,
+	output	[12:0]	memory_mem_a,
+	output	[2:0]	memory_mem_ba,
+	output		memory_mem_ck,
+	output		memory_mem_ck_n,
+	output		memory_mem_cke,
+	output		memory_mem_cs_n,
+	output		memory_mem_ras_n,
+	output		memory_mem_cas_n,
+	output		memory_mem_we_n,
+	output		memory_mem_reset_n,
+	inout	[7:0]	memory_mem_dq,
+	inout		memory_mem_dqs,
+	inout		memory_mem_dqs_n,
+	output		memory_mem_odt,
+	output		memory_mem_dm,
+	input		memory_oct_rzqin
 );
   logic[4:0] debounced_inputs;
 
@@ -73,7 +89,23 @@ module main(
 		.sdram_wire_we_n                      (sdram_wire_we_n),                      //                              .we_n
 		.clocks_ref_clk_clk                   (clk),                   //                clocks_ref_clk.clk
 		.clocks_ref_reset_reset               (~reset),               //              clocks_ref_reset.reset
-		.clocks_sdram_clk_clk                 (clocks_sdram_clk_clk)                  //              clocks_sdram_clk.clk
+		.clocks_sdram_clk_clk                 (clocks_sdram_clk_clk),                  //              clocks_sdram_clk.clk
+		.memory_mem_a                         (memory_mem_a),                         //                        memory.mem_a
+		.memory_mem_ba                        (memory_mem_ba),                        //                              .mem_ba
+		.memory_mem_ck                        (memory_mem_ck),                        //                              .mem_ck
+		.memory_mem_ck_n                      (memory_mem_ck_n),                      //                              .mem_ck_n
+		.memory_mem_cke                       (memory_mem_cke),                       //                              .mem_cke
+		.memory_mem_cs_n                      (memory_mem_cs_n),                      //                              .mem_cs_n
+		.memory_mem_ras_n                     (memory_mem_ras_n),                     //                              .mem_ras_n
+		.memory_mem_cas_n                     (memory_mem_cas_n),                     //                              .mem_cas_n
+		.memory_mem_we_n                      (memory_mem_we_n),                      //                              .mem_we_n
+		.memory_mem_reset_n                   (memory_mem_reset_n),                   //                              .mem_reset_n
+		.memory_mem_dq                        (memory_mem_dq),                        //                              .mem_dq
+		.memory_mem_dqs                       (memory_mem_dqs),                       //                              .mem_dqs
+		.memory_mem_dqs_n                     (memory_mem_dqs_n),                     //                              .mem_dqs_n
+		.memory_mem_odt                       (memory_mem_odt),                       //                              .mem_odt
+		.memory_mem_dm                        (memory_mem_dm),                        //                              .mem_dm
+		.memory_oct_rzqin                     (memory_oct_rzqin)
 	);
 
   display_driver display_5_driver(
