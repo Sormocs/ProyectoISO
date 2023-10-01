@@ -1,13 +1,23 @@
 module main(
-  input logic clk,
-  input logic reset,
-	input	logic[4:0] inputs,
-	output logic[6:0]	display_5,
-	output logic[6:0]	display_4,
-	output logic[6:0]	display_3,
-	output logic[6:0]	display_2,
-	output logic[6:0]	display_1,
-	output logic[6:0]	display_0
+   output	[6:0]	display_5,
+	output	[6:0]	display_4,
+	output	[6:0]	display_3,
+	output	[6:0]	display_2,
+	output	[6:0]	display_1,
+	output	[6:0]	display_0,
+	input	[4:0]	inputs,
+	output	[12:0]	sdram_wire_addr,
+	output	[1:0]	sdram_wire_ba,
+	output		sdram_wire_cas_n,
+	output		sdram_wire_cke,
+	output		sdram_wire_cs_n,
+	inout	[15:0]	sdram_wire_dq,
+	output	[1:0]	sdram_wire_dqm,
+	output		sdram_wire_ras_n,
+	output		sdram_wire_we_n,
+	input		clk,
+	input		reset,
+	output		clocks_sdram_clk_clk
 );
   logic[4:0] debounced_inputs;
 
@@ -45,16 +55,26 @@ module main(
   assign debounced_inputs[4] = inputs[4];
 
   platform cpu(
-    .clk_clk(clk),
-    .reset_reset_n(!reset),
-    .inputs_external_connection_export(debounced_inputs),
-    .display_5_external_connection_export(display_5_driver_input),
-    .display_4_external_connection_export(display_4_driver_input),
-    .display_3_external_connection_export(display_3_driver_input),
-    .display_2_external_connection_export(display_2_driver_input),
-    .display_1_external_connection_export(display_1_driver_input),
-    .display_0_external_connection_export(display_0_driver_input)
-  );
+		.display_0_external_connection_export (display_0_driver_input), // display_0_external_connection.export
+		.display_1_external_connection_export (display_1_driver_input), // display_1_external_connection.export
+		.display_2_external_connection_export (display_2_driver_input), // display_2_external_connection.export
+		.display_3_external_connection_export (display_3_driver_input), // display_3_external_connection.export
+		.display_4_external_connection_export (display_4_driver_input), // display_4_external_connection.export
+		.display_5_external_connection_export (display_5_driver_input), // display_5_external_connection.export
+		.inputs_external_connection_export    (debounced_inputs),    //    inputs_external_connection.export
+		.sdram_wire_addr                      (sdram_wire_addr),                      //                    sdram_wire.addr
+		.sdram_wire_ba                        (sdram_wire_ba),                        //                              .ba
+		.sdram_wire_cas_n                     (sdram_wire_cas_n),                     //                              .cas_n
+		.sdram_wire_cke                       (sdram_wire_cke),                       //                              .cke
+		.sdram_wire_cs_n                      (sdram_wire_cs_n),                      //                              .cs_n
+		.sdram_wire_dq                        (sdram_wire_dq),                        //                              .dq
+		.sdram_wire_dqm                       (sdram_wire_dqm),                       //                              .dqm
+		.sdram_wire_ras_n                     (sdram_wire_ras_n),                     //                              .ras_n
+		.sdram_wire_we_n                      (sdram_wire_we_n),                      //                              .we_n
+		.clocks_ref_clk_clk                   (clk),                   //                clocks_ref_clk.clk
+		.clocks_ref_reset_reset               (~reset),               //              clocks_ref_reset.reset
+		.clocks_sdram_clk_clk                 (clocks_sdram_clk_clk)                  //              clocks_sdram_clk.clk
+	);
 
   display_driver display_5_driver(
     .input_data(display_5_driver_input),
