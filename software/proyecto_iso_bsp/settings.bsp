@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Sep 30, 2023 8:25:27 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1696127127425</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Sep 30, 2023 8:45:43 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1696128343795</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\TEC\Semestre_II_2023\Operativos\Proyectos\P1\ProyectoISO\software\proyecto_iso_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\platform.sopcinfo</SopcDesignFile>
@@ -74,7 +74,7 @@
                 <SettingName>hal.linker.enable_alt_load</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Enables the alt_load() facility. The alt_load() facility copies data sections (.rodata, .rwdata, or .exceptions) from boot memory to RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</Description>
@@ -874,6 +874,30 @@
                 <Enabled>false</Enabled>
                 <Group>none</Group>
         </Setting>
+        <LinkerRegion>
+                <regionName>reset</regionName>
+                <memoryName>rom</memoryName>
+                <offset>0</offset>
+                <size>32</size>
+                <baseAddress>0x8000000</baseAddress>
+                <addressRange>0x08000000 - 0x0800001F</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>rom</regionName>
+                <memoryName>rom</memoryName>
+                <offset>32</offset>
+                <size>8160</size>
+                <baseAddress>0x8000020</baseAddress>
+                <addressRange>0x08000020 - 0x08001FFF</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>ram</regionName>
+                <memoryName>ram</memoryName>
+                <offset>0</offset>
+                <size>4096</size>
+                <baseAddress>0x8002000</baseAddress>
+                <addressRange>0x08002000 - 0x08002FFF</addressRange>
+        </LinkerRegion>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>
                 <addressRange>0x04000000 - 0x07FFFFFF</addressRange>
