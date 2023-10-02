@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS :=
+ALT_INCLUDE_DIRS := include
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -89,9 +89,9 @@ ACDS_VERSION := 20.1
 ELF := proyecto_iso.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += main.c
-C_SRCS += rsa.c
-C_SRCS += pio_control.c
+C_SRCS += src/main.c
+C_SRCS += src/rsa.c
+C_SRCS += src/pio_control.c
 CXX_SRCS :=
 ASM_SRCS :=
 

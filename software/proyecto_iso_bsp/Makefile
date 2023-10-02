@@ -101,7 +101,7 @@ ACDS_VERSION := 20.1
 # BUILD_NUMBER: 720
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := D:/TEC/Semestre_II_2023/Operativos/Proyectos/P1/ProyectoISO/platform.sopcinfo
+SOPC_FILE := /home/rijegaro/Documents/Github/ProyectoISO/platform.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
