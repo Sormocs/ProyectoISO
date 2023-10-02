@@ -33,7 +33,8 @@ module main(
 	inout		memory_mem_dqs_n,
 	output		memory_mem_odt,
 	output		memory_mem_dm,
-	input		memory_oct_rzqin
+	input		memory_oct_rzqin,
+	output	[9:0]	leds
 );
   logic[4:0] debounced_inputs;
 
@@ -105,7 +106,8 @@ module main(
 		.memory_mem_dqs_n                     (memory_mem_dqs_n),                     //                              .mem_dqs_n
 		.memory_mem_odt                       (memory_mem_odt),                       //                              .mem_odt
 		.memory_mem_dm                        (memory_mem_dm),                        //                              .mem_dm
-		.memory_oct_rzqin                     (memory_oct_rzqin)
+		.memory_oct_rzqin                     (memory_oct_rzqin),
+		.leds_external_connection_export      (leds)
 	);
 
   display_driver display_5_driver(

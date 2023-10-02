@@ -1,7 +1,7 @@
 #include "altera_avalon_pio_regs.h"
 #include "system.h"
 
-#include "pio_control.h"
+#include "include/pio_control.h"
 
 /**
  * Sets the value of the PIOs used by the displays.

@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
-# SOPC Builder design path: ../../platform.sopcinfo
+# SOPC Builder design path: D:/TEC/Semestre_II_2023/Operativos/Proyectos/P1/ProyectoISO/platform.sopcinfo
 #
-# Generated: Sat Sep 30 17:46:08 CST 2023
+# Generated: Sun Oct 01 20:36:12 CST 2023
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,10 +47,10 @@
 # by allowing GDB to cache memory contents on the host.
 
 # sdram
-memory 0x4000000 0x8000000 cache
+memory 0x0 0x4000000 cache
 
 # rom
-memory 0x8000000 0x8002000 cache
+memory 0x4000000 0x4002000 cache
 
 # ram
-memory 0x8002000 0x8003000 cache
+memory 0x4002000 0x4003000 cache

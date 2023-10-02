@@ -1,4 +1,4 @@
-#include "rsa.h"
+#include "include/rsa.h"
 
 uint16_t binary_exponentiation(uint16_t base, uint16_t exp, uint16_t mod) {
   uint32_t result = 1;
