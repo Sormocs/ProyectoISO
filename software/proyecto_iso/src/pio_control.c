@@ -2,7 +2,7 @@
 #include "system.h"
 
 #include "pio_control.h"
-
+#include "mem_offsets.h"
 
 /**
  * Sets the value of the PIOs used by the displays.
@@ -23,33 +23,37 @@ void set_displays(uint32_t value, uint8_t base) {
   IOWR(DISPLAY_0_BASE, 0, displays[0]);
 }
 
-void set_private_key_n(private_key_t* private_key) {
+void set_private_key_n() {
+  uint16_t current_n = IORD(SDRAM_BASE + PRIVATE_KEY_N_OFFSET, 0);
+
   if (IORD(INPUTS_BASE, 0) & BUTTON_1_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_1_MSK);
-    private_key->n += 1;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_N_OFFSET, 0, current_n + 1);
   }
   else if (IORD(INPUTS_BASE, 0) & BUTTON_2_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_2_MSK);
-    private_key->n += 0xf;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_N_OFFSET, 0, current_n + 0xf);
   }
   else if (IORD(INPUTS_BASE, 0) & BUTTON_3_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_3_MSK);
-    private_key->n += 0xff;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_N_OFFSET, 0, current_n + 0xff);
   }
 }
 
-void set_private_key_d(private_key_t* private_key) {
+void set_private_key_d() {
+  uint16_t current_d = IORD(SDRAM_BASE + PRIVATE_KEY_D_OFFSET, 0);
+
   if (IORD(INPUTS_BASE, 0) & BUTTON_1_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_1_MSK);
-    private_key->d += 1;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_D_OFFSET, 0, current_d + 1);
   }
   else if (IORD(INPUTS_BASE, 0) & BUTTON_2_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_2_MSK);
-    private_key->d += 0xf;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_D_OFFSET, 0, current_d + 0xf);
   }
   else if (IORD(INPUTS_BASE, 0) & BUTTON_3_MSK) {
     while (IORD(INPUTS_BASE, 0) & BUTTON_3_MSK);
-    private_key->d += 0xff;
+    IOWR(SDRAM_BASE + PRIVATE_KEY_D_OFFSET, 0, current_d + 0xff);
   }
 }
 

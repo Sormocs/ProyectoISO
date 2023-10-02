@@ -12,8 +12,8 @@
 
 void set_displays(uint32_t value, uint8_t base);
 
-void set_private_key_n(private_key_t* private_key);
+void set_private_key_n(/* private_key_t* private_key */);
 
-void set_private_key_d(private_key_t* private_key);
+void set_private_key_d(/* private_key_t* private_key */);
 
 uint16_t decrypt_pixel(uint16_t encrypted_pixel, private_key_t* private_key);
