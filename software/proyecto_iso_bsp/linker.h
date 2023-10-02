@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'platform'
- * SOPC Builder design path: ../../platform.sopcinfo
+ * SOPC Builder design path: /home/rijegaro/Documents/Github/ProyectoISO/platform.sopcinfo
  *
- * Generated: Sun Sep 24 16:58:06 CST 2023
+ * Generated: Mon Oct 02 00:01:20 CST 2023
  */
 
 /*
@@ -65,11 +65,11 @@
  *
  */
 
-#define RAM_REGION_BASE 0x10000
+#define RAM_REGION_BASE 0x4002000
 #define RAM_REGION_SPAN 4096
-#define RESET_REGION_BASE 0x0
+#define RESET_REGION_BASE 0x4000000
 #define RESET_REGION_SPAN 32
-#define ROM_REGION_BASE 0x20
+#define ROM_REGION_BASE 0x4000020
 #define ROM_REGION_SPAN 8160
 
 
@@ -98,7 +98,6 @@
  *
  */
 
-#define ALT_LOAD_COPY_RODATA
 #define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */

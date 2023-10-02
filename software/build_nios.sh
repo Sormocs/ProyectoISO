@@ -1,4 +1,3 @@
-# Correr como sudo
 clear
 
 SOFTWARE_DIR=$(pwd)

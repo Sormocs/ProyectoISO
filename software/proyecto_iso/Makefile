@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS := 
+ALT_INCLUDE_DIRS := include
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -46,8 +46,8 @@ ALT_LDFLAGS :=
 # This will ensure paths are readable by GNU Make.
 #------------------------------------------------------------------------------
 
-UNAME = $(shell uname -r | tr A-Z a-z)
-ifeq ($(findstring microsoft,$(UNAME)),microsoft)
+UNAME = $(shell uname -r)
+ifeq ($(findstring Microsoft,$(UNAME)),Microsoft)
 	WINDOWS_EXE = .exe
 endif
 
@@ -61,7 +61,6 @@ else # !WINDOWS_EXE
 	adjust-path = $1
 	adjust-path-mixed = $1
 endif
-
 
 #vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 #                           GENERATED SETTINGS START                         v
@@ -77,12 +76,12 @@ BUILD_CONFIGS := default
 
 # This following VERSION comment indicates the version of the tool used to 
 # generate this makefile. A makefile variable is provided for VERSION as well. 
-# ACDS_VERSION: 21.1
-ACDS_VERSION := 21.1
+# ACDS_VERSION: 20.1
+ACDS_VERSION := 20.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 850
+# BUILD_NUMBER: 720
 
 # Define path to the application ELF. 
 # It may be used by the makefile fragments so is defined before including them. 
@@ -91,8 +90,8 @@ ELF := proyecto_iso.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS += src/main.c
-C_SRCS += src/pio_control.c
 C_SRCS += src/rsa.c
+C_SRCS += src/pio_control.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -112,7 +111,7 @@ CREATE_LINKER_MAP := 1
 # Common arguments for ALT_CFLAGSs
 APP_CFLAGS_DEFINED_SYMBOLS :=
 APP_CFLAGS_UNDEFINED_SYMBOLS :=
-APP_CFLAGS_OPTIMIZATION := -O0
+APP_CFLAGS_OPTIMIZATION := -Os
 APP_CFLAGS_DEBUG_LEVEL := -g
 APP_CFLAGS_WARNINGS := -Wall
 APP_CFLAGS_USER_FLAGS :=
@@ -130,7 +129,7 @@ SYS_LIB :=
 BSP_ROOT_DIR := ../proyecto_iso_bsp/
 
 # List of application specific include directories, library directories and library names
-APP_INCLUDE_DIRS := ./include
+APP_INCLUDE_DIRS :=
 APP_LIBRARY_DIRS :=
 APP_LIBRARY_NAMES :=
 
@@ -534,8 +533,8 @@ DOWNLOAD_JDI_FLAG := --jdi $(JDI_FILE)
 endif
 
 # Patch the Elf with the SOPCINFO_FILE if specified
-ifneq ($(wildcard $(call adjust-path,$(SOPCINFO_FILE))),)
-ELF_PATCH_FLAG += --sopcinfo $(SOPCINFO_FILE)
+ifneq ($(wildcard $(SOPCINFO_FILE)),)
+ELF_PATCH_FLAG += --sopcinfo $(call adjust-path-mixed,$(SOPCINFO_FILE))
 endif
 
 # Use the DOWNLOAD_CABLE variable to specify which JTAG cable to use. 
@@ -676,14 +675,14 @@ endif
 define compile.c
 @$(ECHO) Info: Compiling $< to $@
 @$(MKDIR) $(@D)
-$(CC) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CFLAGS) -o "$(call adjust-path-mixed,$@)" "$(call adjust-path-mixed,$<)"
+$(CC) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CFLAGS) -o $@ $<
 $(CC_POST_PROCESS)
 endef
 
 define compile.cpp
 @$(ECHO) Info: Compiling $< to $@
 @$(MKDIR) $(@D)
-$(CXX) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CXXFLAGS) $(APP_CFLAGS) -o "$(call adjust-path-mixed,$@)" "$(call adjust-path-mixed,$<)"
+$(CXX) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CXXFLAGS) $(APP_CFLAGS) -o $@ $<
 $(CXX_POST_PROCESS)
 endef
 
@@ -696,7 +695,7 @@ endif
 define compile.s
 @$(ECHO) Info: Assembling $< to $@
 @$(MKDIR) $(@D)
-$(AS) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CFLAGS) $(APP_ASFLAGS) -o "$(call adjust-path-mixed,$@)" "$(call adjust-path-mixed,$<)"
+$(AS) -MP -MMD -c $(APP_CPPFLAGS) $(APP_CFLAGS) $(APP_ASFLAGS) -o $@ $<
 $(AS_POST_PROCESS)
 endef
 
